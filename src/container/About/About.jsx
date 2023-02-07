@@ -1,6 +1,6 @@
 import React, {useState, useEffect}from 'react';
 
-import {AppWrap} from '../../wapper';
+import {AppWrap, MotionWrap} from '../../wapper';
 import {motion} from 'framer-motion';
 
 import { urlFor,client } from '../../client';
@@ -20,7 +20,7 @@ const About = () => {
 
   return (
     <>
-      <h2 className="head-text">I Know that <span>Good Design</span> <br />means  <span>Good Business</span></h2>
+      <h2 className="head-text">I enjoy creating <span>cool websites</span></h2>
 
       <div className="app__profiles">
         {abouts.map((about, index) => (
@@ -42,4 +42,8 @@ const About = () => {
 };
 
 
-export default AppWrap(About, 'about');
+export default AppWrap(
+  MotionWrap(About, 'app__about'), 
+  'about',
+  "app__whitebg"
+  );
