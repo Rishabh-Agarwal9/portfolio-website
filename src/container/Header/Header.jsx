@@ -32,6 +32,8 @@ const Header = () => {
 }
   return (
   <div className="app__header app__flex">
+
+   
     <motion.div
       whileInView={{ x: [-100, 0], opacity: [0, 1] }}
       transition={{ duration: 0.5 }}
@@ -48,13 +50,20 @@ const Header = () => {
             
           </div>
         </div>
-
+        
         <div className="tag-cmp app__flex">
           <p className="p-text">Fullstack Web Developer</p>
           <p className="p-text">Engineering student</p>
         </div>
+        
+      </div>
+
+      <div className="app__flex floating_island">
+          <img className='bounce' src={images.island} alt="floating island" />
       </div>
     </motion.div>
+
+   
 
     <motion.div
       whileInView={{ opacity: [0, 1] }}
@@ -69,6 +78,7 @@ const Header = () => {
         alt="profile_circle"
         className="overlay_circle"
       />
+  
     </motion.div>
 
     <motion.div
@@ -82,6 +92,8 @@ const Header = () => {
         </div>
       ))}
     </motion.div>
+
+  
   </div>
   );
 };

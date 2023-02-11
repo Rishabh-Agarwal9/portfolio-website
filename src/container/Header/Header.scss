@@ -172,25 +172,25 @@
   
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: flex-start;
     position: relative;
   
-    img {
-      width: 100%;
-      object-fit: contain;
-      z-index: 1;
-    }
-  
     .overlay_circle {
-     // position: absolute;
-      // left: 0;
-      // right: 0;
-      // bottom: 0;
+    //  position: absolute;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
       z-index: 0;
-      width: 130%;
+      width: 140%;
       height: auto;
-      padding-bottom: 5rem;
-      padding-left: 5rem;
+      padding-top: 5rem;
+      padding-left: 7rem;
+      
+  
+      // @media screen and (max-width: 1200px) {
+      //   max-width: 100%;
+      //   padding: 0;
+      // }
     }
   
     @media screen and (max-width: 1200px) {
@@ -198,4 +198,47 @@
     }
   }
 
+
+.floating_island{
   
+  margin-top: 8rem;
+
+  @media screen and (max-width: 1200px) {
+    display: none !important;
+  }
+  img{
+    width:50%;
+  }
+}
+  
+.bounce {
+  animation: bounce 3s infinite alternate;
+  -webkit-animation: bounce 3s infinite alternate;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-35px);
+  }
+}
+
+@-webkit-keyframes image {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-45px);
+  }
+}
+@keyframes image {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-45px);
+  }
+
+
+}

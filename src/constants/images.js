@@ -19,6 +19,7 @@ import linkedin from '../assets/linkedin.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
 import circle_logo from '../assets/circle_logo.png';
+import island from '../assets/island.png';
 
 
 
@@ -26,6 +27,7 @@ import circle_logo from '../assets/circle_logo.png';
 
 
 const pics={
+  island,
   circle_logo,
   linkedin,
   email,
