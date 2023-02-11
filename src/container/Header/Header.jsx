@@ -15,7 +15,11 @@ const scaleVariants = {
   },
 };
 
-const Header = () => (
+const Header = () => {
+
+  const tech=[images.cpp,images.css,images.git,images.html,images.javascript,images.node,images.python,images.react,images.sass,];
+
+  return (
   <div className="app__header app__flex">
     <motion.div
       whileInView={{ x: [-100, 0], opacity: [0, 1] }}
@@ -27,7 +31,10 @@ const Header = () => (
           <span>💻</span>
           <div style={{ marginLeft: 20 }}>
             <p className="p-text">Hello, I am</p>
-            <h1 className="head-text">Rishabh.</h1>
+            <div className='typewriter'>
+              <h1 className="head-text">Rishabh.</h1>
+            </div>
+            
           </div>
         </div>
 
@@ -65,7 +72,8 @@ const Header = () => (
       ))}
     </motion.div>
   </div>
-);
+  );
+};
 
 
 export default AppWrap(Header,'home');

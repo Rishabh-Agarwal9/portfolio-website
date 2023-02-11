@@ -1,6 +1,7 @@
 #home {
     position: relative;
-    background: url("../../assets/bgIMG.png");
+    // background: url("../../assets/bgIMG.png");
+    background-color: var(--one-color);
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
@@ -194,3 +195,5 @@
       margin: 2rem 0;
     }
   }
+
+  

@@ -36,7 +36,7 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className='head-text'> Interested in working together? <span>Chat with me!</span> </h2>
+      <h2 className='head-text footer-text'> Interested in working together? <span>Chat with me!</span> </h2>
       <div className='app__footer-cards'>
         <div className='app__footer-card'>
           <img src={images.email} alt="email" />
@@ -71,11 +71,19 @@ const Footer = () => {
           ></textarea>
         </div>
 
+       
+
         <button type='button' className='p-text' onClick={handleSubmit}>{loading?'Sending': 'Send Message'}</button>
       </div>
       : <div>
-        <h3 className='head-text'>Thank you for getting in touch! </h3>
+        <h3 className='head-text footer-text'>Thank you for getting in touch! </h3>
       </div>}
+
+
+      <div className="copyright">
+          <p className="p-text">@2023 RISHABH</p>
+          <p className="p-text">All rights reserved</p>
+        </div>
 
     </>
   )
@@ -84,5 +92,5 @@ const Footer = () => {
 export default AppWrap(
   MotionWrap(Footer,'app__footer'),
   'contact',
-  'app__whitebg'
+  'app__onecolor'
 );

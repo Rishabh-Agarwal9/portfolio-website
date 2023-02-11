@@ -9,16 +9,16 @@ import './Skills.scss';
 
 
 const Skills = () => {
-  const [experiences, setExperiences] = useState([]);
+  // const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
+    // const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
 
-    client.fetch(query).then((data) => {
-      setExperiences(data);
-    });
+    // client.fetch(query).then((data) => {
+    //   setExperiences(data);
+    // });
 
     client.fetch(skillsQuery).then((data) => {
       setSkills(data);
@@ -27,7 +27,7 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className="head-text">Skills</h2>
+      <h2 className="head-text skills-text">Skills</h2>
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
@@ -40,11 +40,11 @@ const Skills = () => {
             >
               <div
                 className="app__flex"
-                style={{ backgroundColor: skill.bgColor }}
+                style={{ backgroundColor: '#FCFFE7' }}
               >
                 <img src={urlFor(skill.icon)} alt={skill.name} />
               </div>
-              <p className="p-text">{skill.name}</p>
+              <p className="p-text skills-text">{skill.name}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -56,5 +56,5 @@ const Skills = () => {
 export default AppWrap(
   MotionWrap(Skills, 'app__skills'), 
   'skills',
-  "app__whitebg"
+  "app__twocolor"
   );

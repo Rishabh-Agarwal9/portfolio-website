@@ -41,7 +41,7 @@ const Work = () => {
   };
   return (
     <>
-      <h2 className="head-text"> Here are my <span>Projects</span></h2>
+      <h2 className="head-text work-text"> Here are my <span>Projects</span></h2>
 
       <div className='app__work-filter'>
         {['UI/UX', 'Web App','Mobile App', 'React Js', 'All'].map((item,index)=>(
@@ -115,5 +115,5 @@ const Work = () => {
 export default AppWrap(
   MotionWrap(Work, 'app__works'), 
   'work',
-  "app__primarybg"
+  "app__onecolor"
   );
