@@ -16,15 +16,17 @@ import sass from '../assets/sass.png';
 import typescript from '../assets/typescript.png';
 
 import linkedin from '../assets/linkedin.png';
-
-
-import profile from '../assets/profile.jpeg';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
+import circle_logo from '../assets/circle_logo.png';
+
+
+
 
 
 
 const pics={
+  circle_logo,
   linkedin,
   email,
   api,
@@ -40,7 +42,6 @@ const pics={
   redux,
   sass,
   typescript,
-  profile,
   circle,
   logo,
 };

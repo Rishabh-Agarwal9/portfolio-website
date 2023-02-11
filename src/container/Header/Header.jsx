@@ -19,6 +19,17 @@ const Header = () => {
 
   const tech=[images.cpp,images.css,images.git,images.html,images.javascript,images.node,images.python,images.react,images.sass,];
 
+  function getRandom(arr, n) {
+    var result = new Array(n),
+        len = arr.length,
+        taken = new Array(len);
+    while (n--) {
+        var x = Math.floor(Math.random() * len);
+        result[n] = arr[x in taken ? taken[x] : x];
+        taken[x] = --len in taken ? taken[len] : len;
+    }
+    return result;
+}
   return (
   <div className="app__header app__flex">
     <motion.div
@@ -50,11 +61,11 @@ const Header = () => {
       transition={{ duration: 0.5, delayChildren: 0.5 }}
       className="app__header-img"
     >
-      {/* <img src={images.profile} alt="profile_bg" /> */}
+      {/* <img src={images.circle_logo} alt="profile_bg" /> */}
       <motion.img
         whileInView={{ scale: [0, 1] }}
         transition={{ duration: 1, ease: 'easeInOut' }}
-        src={images.circle}
+        src={images.circle_logo}
         alt="profile_circle"
         className="overlay_circle"
       />
@@ -65,7 +76,7 @@ const Header = () => {
       whileInView={scaleVariants.whileInView}
       className="app__header-circles"
     >
-      {[images.html, images.react, images.node].map((circle, index) => (
+      {getRandom(tech,3).map((circle, index) => (
         <div className="circle-cmp app__flex" key={`circle-${index}`}>
           <img src={circle} alt="profile_bg" />
         </div>
