@@ -1,38 +1,39 @@
-import React,{useState} from 'react';
-import {images} from '../../constants';
-import { AppWrap, MotionWrap } from '../../wapper';
-import {client} from '../../client';
+import React, { useState } from 'react';
 
+import { images } from '../../constants';
+import { AppWrap, MotionWrap } from '../../wapper';
+import { client } from '../../client';
 import './Footer.scss';
+
 const Footer = () => {
-  const [formData, setFormData] = useState({name: '',email:'',message:''});
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const{name,email,message} =formData;
+  const { username, email, message } = formData;
 
-  const handleChangeInput=(e)=>{
-    const {name,value}=e.target;
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-    setFormData({...FormData, [name]:value});
-  }
-
-  const handleSubmit=()=>{
+  const handleSubmit = () => {
     setLoading(true);
 
-    const contact={
+    const contact = {
       _type: 'contact',
-      name: name,
-      email: email,
-      message: message
-    }
+      name: formData.username,
+      email: formData.email,
+      message: formData.message,
+    };
 
     client.create(contact)
-      .then(()=>{
+      .then(() => {
         setLoading(false);
         setIsFormSubmitted(true);
       })
-  }
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -47,50 +48,45 @@ const Footer = () => {
           <img src={images.linkedin} alt="linkedin" />
           <a href="https://www.linkedin.com/in/rishabh-agarwal-8a2855230/" className='p-text'>Message me on Linkedin</a>
         </div>
-
       </div>
 
-
-    {!isFormSubmitted?
-      <div className='app__footer-form app__flex'>
-        <div className='app__flex'>
-          <input className='p-text' type="text" placeholder='Your Name' name="name" value={name} onChange={handleChangeInput}/>
+      {!isFormSubmitted ? (
+        <div className="app__footer-form app__flex">
+          <div className="app__flex">
+            <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} autoComplete="off" />
+          </div>
+          <div className="app__flex">
+            <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput }  autoComplete="off"/>
+          </div>
+          <div>
+            <textarea
+              className="p-text"
+              placeholder="Your Message"
+              value={message}
+              name="message"
+              onChange={handleChangeInput}
+            />
+          </div>
+          <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
         </div>
-
-        <div className='app__flex'>
-          <input className='p-text' type="email" placeholder='Your email' name="email" value={email} onChange={handleChangeInput}/>
-        </div>
-
+      ) : (
         <div>
-          <textarea 
-          placeholder='Your Message'
-          className='p-text'
-          value={message}
-          name="message"
-          onChange={handleChangeInput}
-          ></textarea>
+          <h3 className="head-text footer-text">
+            Thank you for getting in touch!
+          </h3>
         </div>
-
-       
-
-        <button type='button' className='p-text' onClick={handleSubmit}>{loading?'Sending': 'Send Message'}</button>
-      </div>
-      : <div>
-        <h3 className='head-text footer-text'>Thank you for getting in touch! </h3>
-      </div>}
-
+      )}
 
       <div className="copyright">
           <p className="p-text">@2023 RISHABH</p>
           <p className="p-text">All rights reserved</p>
-        </div>
-
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default AppWrap(
-  MotionWrap(Footer,'app__footer'),
+  MotionWrap(Footer, 'app__footer'),
   'contact',
-  'app__onecolor'
+  'app__onecolor',
 );
