@@ -20,6 +20,8 @@ import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
 import circle_logo from '../assets/circle_logo.png';
 import island from '../assets/island.png';
+import jquery from '../assets/jquery.png';
+import bootstrap from '../assets/bootstrap.png';
 
 
 
@@ -27,6 +29,8 @@ import island from '../assets/island.png';
 
 
 const pics={
+  jquery,
+  bootstrap,
   island,
   circle_logo,
   linkedin,

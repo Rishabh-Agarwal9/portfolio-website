@@ -187,14 +187,21 @@
       padding-left: 7rem;
       
   
-      // @media screen and (max-width: 1200px) {
-      //   max-width: 100%;
-      //   padding: 0;
-      // }
+      @media screen and (max-width: 1200px) {
+        width: 60%;
+        padding: 0;
+        justify-content: center;
+      }
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+      }
     }
   
     @media screen and (max-width: 1200px) {
       margin: 2rem 0;
+      justify-content: center;
     }
   }
 
@@ -212,8 +219,8 @@
 }
   
 .bounce {
-  animation: bounce 3s infinite alternate;
-  -webkit-animation: bounce 3s infinite alternate;
+  animation: bounce 1s infinite alternate;
+  -webkit-animation: bounce 1s infinite alternate;
 }
 @keyframes bounce {
   from {

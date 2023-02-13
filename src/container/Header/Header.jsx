@@ -17,7 +17,7 @@ const scaleVariants = {
 
 const Header = () => {
 
-  const tech=[images.cpp,images.css,images.git,images.html,images.javascript,images.node,images.python,images.react,images.sass,];
+  const tech=[images.cpp,images.css,images.git,images.html,images.javascript,images.node,images.python,images.react,images.sass,images.jquery,images.bootstrap];
 
   function getRandom(arr, n) {
     var result = new Array(n),
