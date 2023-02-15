@@ -46,7 +46,7 @@ const Footer = () => {
 
         <div className='app__footer-card'>
           <img src={images.linkedin} alt="linkedin" />
-          <a href="https://www.linkedin.com/in/rishabh-agarwal-8a2855230/" className='p-text'>Message me on Linkedin</a>
+          <a href="https://www.linkedin.com/in/rishabh-agarwal-8a2855230/" target="_blank" rel="noopener noreferrer" className='p-text'>Message me on Linkedin</a>
         </div>
       </div>
 
