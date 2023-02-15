@@ -78,7 +78,7 @@
       p {
         width: 100%;
         text-transform: uppercase;
-        text-align: right;
+       // text-align: right;
       }
     }
   
@@ -208,7 +208,7 @@
 
 .floating_island{
   
-  margin-top: 8rem;
+  margin-top: 10rem;
 
   @media screen and (max-width: 1200px) {
     display: none !important;
